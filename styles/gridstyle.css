@@ -1,0 +1,81 @@
+  .item1{grid-area: header;}
+        .item2{grid-area: menu; min-width:250px;}
+        .item3{grid-area: main;}
+        .item4{grid-area: right;}
+        .item5{grid-area: footer;}
+        .item6{grid-area: main2;}
+        .grid-container{
+            display: grid;
+            grid-template-areas: 
+                'header header header header header header header header'
+                'menu menu main main main main right right'
+                'menu menu main main main main right right'
+                'menu menu main2 main2 main2 main2 right right'
+                'menu menu main2 main2 main2 main2 right right'
+                'footer footer footer footer footer footer footer footer';
+            grid-gap: 2px;
+            background-color: green;
+            padding: 5px;
+        }
+        ul{
+            list-style-type: none;
+            margin:0px;
+            padding-left: 0px;
+            width: auto;
+            background-color: grey;
+            border: 2ox solid green;
+        }
+        li a {
+            display: block;
+            color: white;
+            padding: 14px 15px;
+            text-decoration: none;
+        }
+        li{
+            text-align: center;
+            border-bottom: 1px solid green;
+        }
+        li:last-child{
+            border-bottom: none;
+        }
+        li a.active{
+            background-color: #4d4d00;
+            color: white;
+        }
+        li a.hover:not(.active){
+            background-color: white;
+        }
+        img{
+            align-items: center;
+        }
+        p{
+            font-size: 18px;
+            font-style: italic;
+        }
+        .grid-container>div{
+            background-color: greenyellow;
+            text-align: center;
+            padding: 0 0;
+            font-size: 20px;
+        }
+         
+        @media only screen and (max-width: 600px) {
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                'header header  header'
+                'menu menu menu'
+                'main main main'
+                'right right right'
+                'main2 main2 main2'
+                'footer footer footer';
+                grid-gap: 2px;
+                background-color: green;
+                padding: 5px;
+            }    
+            .grid-container > div {
+                background-color:greenyellow;
+                text-align: center;   
+                padding: 0 0;
+                font-size: 20px;
+            }
